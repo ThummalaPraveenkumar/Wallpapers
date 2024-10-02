@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waterfall Wallpapers</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo-container">
+            <img src="./WhatsApp Image 2024-10-02 at 16.41.10_511e000c.jpg" alt="Waterfall Wallpapers Logo" class="logo"> <!-- Logo -->
+        </div>
+        <h1>Waterfall Wallpapers</h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Search</a></li>
+              
+            </ul>
+            <div class="mobile-menu-icon">
+                <span class="icon">&#9776;</span>
+                <span class="close-icon">&times;</span>
+            </div>
+        </nav>
+    </header>
+
+ <!-- Hero Section -->
+<section class="hero">
+    <div class="hero-overlay">
+        <div class="container">
+            <h2 class="hero-title">Immerse Yourself in the Beauty of Waterfalls</h1>
+            <p class="hero-description">Explore breathtaking waterfall wallpapers that transform your device into a piece of nature's art. Discover both live and animated wallpapers for an enchanting experience.</p>
+            <a href="#gallery" class="btn btn-hero">Browse Gallery</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Gallery Section -->
+    <!-- Gallery Section -->
+<!-- Gallery Section -->
+<section id="gallery" class="gallery section">
+    <div class="container">
+        <h2 class="gallery-title">Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-njeromin-12643374.jpg')">
+                <img src="./pexels-njeromin-12643374.jpg" alt="Wallpaper 1">
+            </div>
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-arthousestudio-4534200.jpg')">
+                <img src="./pexels-arthousestudio-4534200.jpg" alt="Wallpaper 2">
+            </div>
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-njeromin-14538845.jpg')">
+                <img src="./pexels-njeromin-14538845.jpg" alt="Wallpaper 3">
+            </div>
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-enginakyurt-14976306.jpg')">
+                <img src="./pexels-enginakyurt-14976306.jpg" alt="Wallpaper 3">
+            </div>
+
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-njeromin-16543478.jpg')">
+                <img src="./pexels-njeromin-16543478.jpg" alt="Wallpaper 1">
+            </div>
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-njeromin-17489013.jpg')">
+                <img src="./pexels-njeromin-17489013.jpg" alt="Wallpaper 2">
+            </div>
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-sergk1-15388097.jpg')">
+                <img src="./pexels-sergk1-15388097.jpg" alt="Wallpaper 3">
+            </div>
+            <div class="gallery-item" onclick="showWallpaperPreview('pexels-samkolder-2387873.jpg')">
+                <img src="./pexels-samkolder-2387873.jpg" alt="Wallpaper 3">
+            </div>
+            
+            
+          
+            </div>
+            <!-- Add more wallpapers as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Wallpaper Preview Section -->
+<!-- Wallpaper Preview Section -->
+<div id="wallpaperPreview" class="wallpaper-preview">
+    <div class="preview-content">
+        <span class="close-icon" onclick="closeWallpaperPreview()">&times;</span>
+        <img id="previewImage" src="" alt="Wallpaper Preview">
+        <a id="downloadButton" style="text-decoration: none;" class="download-btn" href="#" download>Download Wallpaper</a>
+    </div>
+</div>
+
+<div class="feedback-form">
+    <h2>Feedback Form</h2>
+    <form action="#" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="feedback-type">Feedback Type:</label>
+            <select id="feedback-type" name="feedback-type" required>
+                <option value="positive">Positive</option>
+                <option value="negative">Negative</option>
+                <option value="suggestion">Suggestion</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea id="comments" name="comments" rows="4" required></textarea>
+        </div>
+        <button type="submit">Submit Feedback</button>
+    </form>
+</div>
+
+<footer class="footer">
+  
+    <div class="footer-bottom">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </div>
+</footer>
+
+
+
+
+
+   
+
+    <script src="script.js"></script>
+</body>
+</html>

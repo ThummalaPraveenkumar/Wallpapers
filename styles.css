@@ -1,0 +1,417 @@
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #002244;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    flex: 1;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+h1 {
+    flex: 2;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align:left;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.menu ul li {
+    margin-left: 20px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.mobile-menu-icon {
+    display: none;
+}
+
+.icon, .close-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Hero Section Styles */
+.hero {
+    background-image: url('./pexels-dimengliu-3064079.jpg'); /* Replace with your desired hero image */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: white;
+    margin-bottom: 20px; /* Space below the title */
+    font-family: 'Arial Black', sans-serif; /* Use a bold font for emphasis */
+}
+
+.hero-description {
+    font-size: 1.0rem; /* Adjust size as needed */
+    color: white;
+    margin-bottom: 30px; /* Space below the description */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-hero {
+    background-color: #ff7f50; /* Coral color for the button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-hero:hover {
+    background-color: #ff4500; /* Darker coral on hover */
+}
+
+/* Gallery Section Adjustments */
+.gallery {
+    padding: 40px 0;
+    background-color: #f7f7f7;
+}
+
+.gallery-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color:black
+}
+/* Use grid layout to make the gallery responsive */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the gallery within the container */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Wallpaper Preview Section */
+.wallpaper-preview {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.preview-content {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.preview-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.close-icon {
+    position: absolute;
+    top: 15px; /* Positioned for visibility */
+    right: 15px; /* Positioned for visibility */
+    font-size: 24px;
+    color: #000; /* Set color to black for visibility */
+    cursor: pointer;
+    z-index: 1100; /* Ensures it’s on top of the preview */
+}
+
+.download-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu ul {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu.open ul {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #002244;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
+    }
+}
+/* Modal for Wallpaper Preview */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+#preview-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.close-btn {
+    position: absolute;
+    top: -20px; /* Moves it outside the modal content but still in the modal area */
+    right: -20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: black; /* Make it black for better visibility */
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    z-index: 1000;
+}
+
+#download-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #002244;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    
+}
+
+#download-button:hover {
+    background-color: #0055aa;
+    text-decoration: none;
+}
+
+/* General Updates */
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    color: #002244;
+    border-bottom: 3px solid #0055aa;
+    display: inline-block;
+}
+
+.close-icon {
+    position: absolute;
+    top: 5px; /* Adjusted for better visibility */
+    right: 5px; /* Adjusted for better visibility */
+    font-size: 24px;
+    color: #000; /* Set color to black */
+    cursor: pointer;
+    z-index: 1100; /* Ensures it's on top of the preview */
+}
+
+
+.feedback-form {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form h2 {
+    text-align: center;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.footer {
+    background-color: #002244; /* Footer background color */
+    color: white; /* Text color */
+    padding: 20px; /* Padding around the footer */
+    text-align: center; /* Center align text */
+}
+
+.footer-content {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between links and socials */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 10px; /* Space between content and bottom */
+}
+
+.footer-links,
+.footer-socials {
+    display: flex; /* Flexbox for links */
+    gap: 15px; /* Space between links */
+}
+
+.footer a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline from links */
+    transition: color 0.3s; /* Transition effect for hover */
+}
+
+.footer a:hover {
+    color: #28a745; /* Change color on hover */
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* Top border */
+    padding-top: 10px; /* Space above text */
+}
